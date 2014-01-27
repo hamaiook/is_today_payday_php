@@ -13,8 +13,21 @@ class HumanResource{
 			return "You are rich man";	
 		}else if($this->date == 23 && $this->weekDay == "Friday") {
 			return "22 days left";
+		}else if($this->date == 24 && $this->weekDay == "Friday") {
+		    return "23 days left";
+        }else if($this->date == 24) {
+            return "Tomorrow dude";
+        }else if($this->date == 26) {
+            return "You are pool now";
+        }else if($this->date == 27) {
+            return "You got it 2 day ago";
+        }else if($this->date == 28) {
+            return "You got it 3 day ago";
+		}else if($this->date == 29) {
+		    return "You got it 4 day ago";
+		}else if($this->date == 30) {
+		    return "You got it 5 day ago";
 		}
-		return "Tomorrow dude";
 	}
 }
 
@@ -43,4 +56,54 @@ class HumanResourceSpecification extends PHPUnit_Framework_TestCase {
 		$actual = $humanResource->salaryIsPaid();
 		$this->assertEquals($expected, $actual);
 	}
+	
+	function test24friday() {
+	    $expected = "23 days left";
+	    $date=24;
+	    $weekDay = "Friday";
+	    $humanResource = new HumanResource($date, $weekDay);
+	    $actual = $humanResource->salaryIsPaid();
+	    $this->assertEquals($expected, $actual);
+	}
+	
+	function test26date(){
+	    $expected = "You are pool now";
+	    $todate=26;
+	    $humanResource = new HumanResource($todate);
+	    $actual = $humanResource->salaryIsPaid();
+	    $this->assertEquals($expected, $actual);
+	}
+	
+	function test27date(){
+	    $expected = "You got it 2 day ago";
+	    $todate=27;
+	    $humanResource = new HumanResource($todate);
+	    $actual = $humanResource->salaryIsPaid();
+	    $this->assertEquals($expected, $actual);
+	}
+	
+	function test28date(){
+	    $expected = "You got it 3 day ago";
+	    $todate=28;
+	    $humanResource = new HumanResource($todate);
+	    $actual = $humanResource->salaryIsPaid();
+	    $this->assertEquals($expected, $actual);
+	}
+	
+	function test29date(){
+	    $expected = "You got it 4 day ago";
+	    $todate=29;
+	    $humanResource = new HumanResource($todate);
+	    $actual = $humanResource->salaryIsPaid();
+	    $this->assertEquals($expected, $actual);
+	}
+	
+	function test30date(){
+	    $expected = "You got it 5 day ago";
+	    $todate=30;
+	    $humanResource = new HumanResource($todate);
+	    $actual = $humanResource->salaryIsPaid();
+	    $this->assertEquals($expected, $actual);
+	}
+		
 }
